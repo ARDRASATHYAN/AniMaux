@@ -1,0 +1,98 @@
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+.container-flex {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.row {
+  width: 100%;
+  display: flex;
+  flex-wrap: nowrap; /* Prevent flex items from wrapping */
+}
+
+.background-image-container {
+  background: 
+    linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+    url('C:\Users\Ardra.s\Desktop\petcare\petcare\animaux\amimaux\client\src\pages\home\login\images\si6m_cuzw_210802.jpg') no-repeat center center;
+  background-size: cover;
+  height: 100vh; /* Ensure it takes full height */
+  width: 50%; /* Ensure it takes half width */
+}
+
+.form-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(0, 0, 0, 0.5);
+  width: 50%; /* Ensure it takes half width */
+}
+
+.overlay {
+  background: rgba(0, 0, 0, 0.5); /* This adds the overlay effect */
+  padding: 30px;
+  border-radius: 10px;
+}
+
+.contact_form {
+  background: white;
+  padding: 30px;
+  /* border-radius: 10px; */
+  width: 100%;
+  max-width: 800px;
+  position: relative;
+  z-index: 1;
+}
+
+.new-btn-d {
+  margin-top: 20px;
+}
+
+/* Media queries for responsiveness */
+@media (max-width: 768px) {
+  .background-image-container, .form-container {
+    width: 100%; /* Stack items vertically */
+    height: 50vh; /* Adjust height to fit vertically stacked layout */
+  }
+
+  .row {
+    flex-wrap: wrap; /* Allow flex items to wrap */
+  }
+
+  .background-image-container {
+    height: 50vh; /* Adjust height for smaller screens */
+  }
+
+  .form-container {
+    height: auto; /* Let the form container adjust its height */
+  }
+
+  .contact_form {
+    width: 90%; /* Adjust form width for smaller screens */
+    padding: 10px;
+  }
+}
+
+@media (max-width: 576px) {
+  .background-image-container {
+    height: 40vh; /* Further adjust height for very small screens */
+  }
+
+  .overlay {
+    padding: 10px;
+  }
+
+  .contact_form {
+    padding: 10px;
+  }
+
+  .new-btn-d {
+    margin-top: 10px;
+  }
+}

@@ -1,0 +1,29 @@
+.page-section {
+    padding:0 0 20px 0; 
+    /* Adds 20px padding to the top and bottom of each section */
+  }
+  
+  /* Alternatively, you can use margin instead of padding */
+  /*
+  .page-section {
+    margin-bottom: 20px;  Adds 20px margin to the bottom of each section
+  }
+  */
+  
+  /* Optional: Add additional styling for individual sections if needed */
+  .navbar, .homeslider, .services, .aboutus, .ourdoctors {
+    margin-bottom: 20px; /* Add specific margin if needed */
+  }
+  
+  @media (max-width: 768px) {
+    .page-section {
+      padding: 15px 0; /* Adjust spacing for smaller screens */
+    }
+  }
+  
+  @media (max-width: 576px) {
+    .page-section {
+      padding: 10px 0; /* Adjust spacing for very small screens */
+    }
+  }
+  

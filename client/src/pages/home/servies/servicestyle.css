@@ -1,0 +1,71 @@
+.services-box {
+    padding: 50px 0;
+  }
+  
+  .title-box {
+    text-align: center;
+    margin-bottom: 40px;
+  }
+  .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Adjust the color and opacity here */
+    z-index: 1;
+  }
+  .serviceBox {
+    background: #fff;
+    padding: 20px;
+    margin: 15px 0;
+    text-align: center;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+  }
+  
+  .service-icon {
+    font-size: 40px;
+    color: #007bff;
+    margin-bottom: 15px;
+  }
+  
+  .title {
+    font-size: 18px;
+    margin-bottom: 10px;
+    font-weight: bold;
+  }
+  
+  .description {
+    font-size: 14px;
+    color: #666;
+  }
+  
+  @media (max-width: 991px) {
+    .serviceBox {
+      margin: 10px 0;
+    }
+  }
+  
+  @media (max-width: 575px) {
+    .title-box h2 {
+      font-size: 24px;
+    }
+  
+    .serviceBox {
+      padding: 15px;
+    }
+  
+    .service-icon {
+      font-size: 30px;
+    }
+  
+    .title {
+      font-size: 16px;
+    }
+  
+    .description {
+      font-size: 12px;
+    }
+  }
+  

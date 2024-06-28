@@ -1,0 +1,34 @@
+.about-box {
+    padding: 50px 0;
+  }
+  
+  .title-box {
+    text-align: center;
+    margin-bottom: 40px;
+  }
+  
+  .about-main-info {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  
+  @media (max-width: 767px) {
+    .about-box {
+      height: auto; /* Adjust height for smaller screens */
+    }
+  
+    .about-main-info > div {
+      margin-bottom: 20px; /* Space between sections */
+    }
+  }
+  
+  @media (max-width: 575px) {
+    .title-box h2 {
+      font-size: 24px; /* Adjust title size for smaller screens */
+    }
+  
+    .about-main-info > div {
+      margin-bottom: 15px; /* Adjust spacing */
+    }
+  }
+  

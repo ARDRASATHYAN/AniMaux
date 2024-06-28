@@ -1,0 +1,31 @@
+.profile-upload {
+    display: flex;
+}
+.upload-img {
+    margin-right: 10px;
+}
+
+.upload-input {
+    width: 100%;
+}
+.form-control {
+    background-color: #fff;
+    margin-bottom: 30px;
+    border: 1px solid #ebebeb;
+    box-sizing: border-box;
+    color: #000000;
+    font-size: 16px;
+    outline: 0 none;
+    padding: 10px 25px;
+    height: 55px;
+    resize: none;
+    box-shadow: none !important;
+    width: 100%;
+}
+.contact_form {
+    border: 1px solid #ededed;
+    box-shadow: 0 5px 14px rgba(0, 0, 0, 0.1);
+    background-color: #f2f3f5;
+   
+    border-radius: 2px;
+}

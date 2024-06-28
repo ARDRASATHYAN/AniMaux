@@ -1,0 +1,69 @@
+.page-wrapper {
+    height: 800px;
+    /* background: #f2f3f5; */
+}
+
+.content {
+    padding: 20px;
+}
+
+.page-title {
+    font-size: 24px;
+    font-weight: 700;
+    margin-bottom: 20px;
+}
+
+.btn-primary {
+    background-color: #007bff;
+    border-color: #007bff;
+}
+
+.btn-rounded {
+    border-radius: 50px;
+}
+
+.m-b-20 {
+    margin-bottom: 20px;
+}
+
+.doctor-grid {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 0px 40px 40px 40px;
+
+}
+
+.profile-widget {
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.1);
+    padding: 20px;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.doctor-img {
+    margin-bottom: 15px;
+}
+
+.avatar img {
+    width: 100%;
+    border-radius: 50%;
+}
+
+.profile-action {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+}
+
+.doctor-name {
+    font-size: 18px;
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+
+.doc-prof {
+    font-size: 14px;
+    color: #757575;
+}
