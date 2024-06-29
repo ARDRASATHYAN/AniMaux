@@ -20,7 +20,7 @@ html, body {
 .background-image-container {
   background: 
     linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
-    url('C:\Users\Ardra.s\Desktop\petcare\petcare\animaux\amimaux\client\src\pages\home\login\images\si6m_cuzw_210802.jpg') no-repeat center center;
+    url('../images/si6m_cuzw_210802.jpg') no-repeat center center;
   background-size: cover;
   height: 100vh; /* Ensure it takes full height */
   width: 50%; /* Ensure it takes half width */
