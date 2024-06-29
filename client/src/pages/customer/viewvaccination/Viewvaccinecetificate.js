@@ -10,7 +10,7 @@ function Viewvaccinecetificate() {
     const [first, setfirst] = useState(null); // Initialize state to null
     const { id } = useParams()
     useEffect(() => {
-        axios.get(`http://localhost:4000/vaccine/viewvaccines/${id}`)
+        axios.get(`${process.env.REACT_APP_BACKEND_URL}/vaccine/viewvaccines/${id}`)
             .then((Response) => {
                 console.log('API response:', Response.data); // Log the response
                 setfirst(Response.data.data);

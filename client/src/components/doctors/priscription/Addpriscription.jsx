@@ -68,7 +68,7 @@ function Addpriscription() {
   const handleSubmit = (event) => {
     event.preventDefault();
     axios
-      .post('http://localhost:4000/prescription/prescription', {
+      .post(`${process.env.REACT_APP_BACKEND_URL}/prescription/prescription`, {
         doctor_id: doctorid,
         appoint_id: id,
         pet_id: pet_id,
@@ -78,7 +78,7 @@ function Addpriscription() {
         console.log('data=>', response.data);
         if (response.data.success === true) {
           // Update appointment status to "completed"
-          axios.put(`http://localhost:4000/appoint/appoint/${id}`, { status: 'completed' });
+          axios.put(`${process.env.REACT_APP_BACKEND_URL}/appoint/appoint/${id}`, { status: 'completed' });
 
           navigate('/Dviewappointment');
 

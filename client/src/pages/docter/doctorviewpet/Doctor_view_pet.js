@@ -19,7 +19,7 @@ function Doctor_view_pet() {
     useEffect(() => {
        
 
-        axios.get(`http://localhost:4000/pet/viewpet/${id}`).then((response) => {
+        axios.get(`${process.env.REACT_APP_BACKEND_URL}/pet/viewpet/${id}`).then((response) => {
             console.log(response);
             setUser(response.data.data)
         }).catch((err) => {

@@ -48,9 +48,9 @@ function DoctorReg() {
         data.append('name', file.name)
         data.append('file', file)
   
-        axios.post('http://localhost:4000/register/doctreg', input)
+        axios.post(`${process.env.REACT_APP_BACKEND_URL}/register/doctreg`, input)
           .then((response) => {
-            return axios.post('http://localhost:4000/image/upload-image', data)
+            return axios.post(`${process.env.REACT_APP_BACKEND_URL}/image/upload-image`, data)
           })
           .then((response) => {
             console.log("res==============>", response.data)

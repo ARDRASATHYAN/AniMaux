@@ -36,7 +36,7 @@ function AdminAddAppoint() {
     });
     console.log('input=>', input);
     useEffect(() => {
-      axios.get(`http://localhost:4000/pet/viewpet/${id}`).then((response) => {
+      axios.get(`${process.env.REACT_APP_BACKEND_URL}/pet/viewpet/${id}`).then((response) => {
         setSlot(response.data.data);
       }).catch((err) => {
         console.log(err);
@@ -97,7 +97,7 @@ function AdminAddAppoint() {
       setFormErrors(validate(input));
       setIsSubmit(true);
       if (Object.keys(formErrors).length === 0 && isSubmit) {
-        axios.post('http://localhost:4000/appoint/appoint', input).then((response) => {
+        axios.post(`${process.env.REACT_APP_BACKEND_URL}/appoint/appoint`, input).then((response) => {
           console.log("res==============>", response.data);
           if (response.data.success === true) {
             window.location.reload();

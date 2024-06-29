@@ -15,7 +15,7 @@ function Viewpriscription() {
     const [first, setfirst] = useState(null); // Initialize state to null
     console.log('id', id);
     useEffect(() => {
-        axios.get(`http://localhost:4000/prescription/prescription/${id}`)
+        axios.get(`${process.env.REACT_APP_BACKEND_URL}/prescription/prescription/${id}`)
             .then((Response) => {
                 console.log('API response:', Response.data); // Log the response
                 setfirst(Response.data.data);

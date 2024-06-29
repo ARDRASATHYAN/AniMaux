@@ -15,7 +15,7 @@ function Viewdocter() {
 
     useEffect(() => {
       // Fetch doctors
-      axios.get('http://localhost:4000/docteravaliable/listdocter')
+      axios.get(`${process.env.REACT_APP_BACKEND_URL}/docteravaliable/listdocter`)
         .then((response) => {
           console.log('Doctors:', response);
           setDoctors(response.data.data);
@@ -28,7 +28,7 @@ function Viewdocter() {
     }, []);
 
     const handleDelete = (id) => {
-      axios.delete(`http://localhost:4000/docteravaliable/delete-doctor/${id}`)
+      axios.delete(`${process.env.REACT_APP_BACKEND_URL}/docteravaliable/delete-doctor/${id}`)
         .then(() => {
           setDoctors(doctors.filter((doctor) => doctor._id !== id));
         })

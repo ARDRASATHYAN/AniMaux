@@ -26,11 +26,11 @@ function AddVaccinationcertificate() {
   const submit = (e) => {
     e.preventDefault();
     console.log(input);
-    axios.post('http://localhost:4000/vaccine/vaccine', input).then((response) => {
+    axios.post(`${process.env.REACT_APP_BACKEND_URL}/vaccine/vaccine`, input).then((response) => {
       console.log("res===========>", response.data);
       if (response.data.success === true) {
         // Update appointment status to "completed"
-        axios.put(`http://localhost:4000/appoint/appoint/${id}`, { status: 'completed' });
+        axios.put(`${process.env.REACT_APP_BACKEND_URL}/appoint/appoint/${id}`, { status: 'completed' });
 
         navigate('/Dviewappointment');
 
@@ -48,7 +48,7 @@ function AddVaccinationcertificate() {
 
   useEffect(() => {
     axios
-      .get(`http://localhost:4000/appoint/appoint/${id}`)
+      .get(`${process.env.REACT_APP_BACKEND_URL}/appoint/appoint/${id}`)
       .then((response) => {
         const data = response.data.data;
         setUser(data);

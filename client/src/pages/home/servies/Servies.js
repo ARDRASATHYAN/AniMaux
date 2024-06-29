@@ -5,7 +5,7 @@ import Navbar from '../../../components/home/navbar/Navbar'
 function Servies() {
   const [user,setUser] =useState([])
   useEffect(()=>{
-    axios.get('http://localhost:4000/service/viewservices').then((response)=>{
+    axios.get(`${process.env.REACT_APP_BACKEND_URL}/service/viewservices`).then((response)=>{
       console.log(response);
       setUser(response.data.data)
     }).catch((err)=>{

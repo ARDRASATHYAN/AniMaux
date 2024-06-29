@@ -60,7 +60,7 @@ function DailyDocter() {
 
 
       console.log(input);
-      axios.post('http://localhost:4000/docteravaliable/slot', input).then((response) => {
+      axios.post(`${process.env.REACT_APP_BACKEND_URL}/docteravaliable/slot`, input).then((response) => {
         console.log('mmm', input);
         console.log("res==============>", response.data);
         if (response.data.success === true) {
@@ -77,7 +77,7 @@ function DailyDocter() {
   const [user, setUser] = useState([])
   console.log(user);
   useEffect(() => {
-    axios.get('http://localhost:4000/register/listdoctor').then((response) => {
+    axios.get(`${process.env.REACT_APP_BACKEND_URL}/register/listdoctor`).then((response) => {
       console.log(response);
       setUser(response.data.data)
     }).catch((err) => {

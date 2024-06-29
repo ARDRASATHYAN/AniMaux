@@ -15,7 +15,7 @@ function TableViewPrescription() {
     const navigate = useNavigate()
     console.log('id', id);
     useEffect(() => {
-        axios.get(`http://localhost:4000/prescription/prescriptions/${id}`)
+        axios.get(`${process.env.REACT_APP_BACKEND_URL}/prescription/prescriptions/${id}`)
             .then((Response) => {
                 console.log('API response:', Response.data); // Log the response
                 setfirst(Response.data.data);

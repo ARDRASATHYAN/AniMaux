@@ -16,7 +16,7 @@ function Viewpet() {
     useEffect(() => {
         console.log(user_id);
 
-        axios.get(`http://localhost:4000/pet/viewpet/${user_id}`).then((response) => {
+        axios.get(`${process.env.REACT_APP_BACKEND_URL}/pet/viewpet/${user_id}`).then((response) => {
             console.log(response);
             setUser(response.data.data)
         }).catch((err) => {

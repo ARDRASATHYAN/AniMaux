@@ -48,7 +48,7 @@ function Addservice() {
     //       console.log(response);
     //     })
     //   }
-      axios.post('http://localhost:4000/service/service',input).then((response)=>{
+      axios.post(`${process.env.REACT_APP_BACKEND_URL}/service/service`,input).then((response)=>{
         console.log("res===========>",response.data);
     
         if(response.data.success===true){

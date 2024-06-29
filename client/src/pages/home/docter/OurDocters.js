@@ -10,7 +10,7 @@ function OurDocters() {
 
   useEffect(() => {
     // Fetch doctors
-    axios.get('http://localhost:4000/docteravaliable/listdocter')
+    axios.get(`${process.env.REACT_APP_BACKEND_URL}/docteravaliable/listdocter`)
       .then((response) => {
         console.log('Doctors:', response);
         setDoctors(response.data.data);

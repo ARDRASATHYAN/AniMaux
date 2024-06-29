@@ -15,7 +15,7 @@ function TotalAppointview() {
       // id=doctorid
     ])
     useEffect(() => {
-      axios.get('http://localhost:4000/appoint/appoint').then((response) => {
+      axios.get(`${process.env.REACT_APP_BACKEND_URL}/appoint/appoint`).then((response) => {
         console.log(response);
         setAppoint(response.data.data)
       }).catch((err) => {

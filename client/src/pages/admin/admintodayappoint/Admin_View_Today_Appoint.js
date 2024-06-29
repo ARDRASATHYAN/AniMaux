@@ -21,7 +21,7 @@ function Admin_View_Today_Appoint() {
     // id=doctorid
 ])
 useEffect(() => {
-    axios.get('http://localhost:4000/appoint/appoint').then((response) => {
+    axios.get(`${process.env.REACT_APP_BACKEND_URL}/appoint/appoint`).then((response) => {
         const currentDate = new Date().toISOString().split('T')[0];
         const filteredAppointments = response.data.data.filter(appointment => {
           const appointmentDate = new Date(appointment.date).toISOString().split('T')[0];

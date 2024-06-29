@@ -12,7 +12,7 @@ function HomeSlider() {
   const navigate=useNavigate()
   const login_id = localStorage.getItem('login_id')
   useEffect(() => {
-    axios.get('http://localhost:4000/service/view-slot')
+    axios.get(`${process.env.REACT_APP_BACKEND_URL}/service/view-slot`)
       .then((response) => {
         console.log('Slots:', response.data.data);
         setSlots(response.data.data);

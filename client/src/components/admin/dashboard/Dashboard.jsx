@@ -8,7 +8,7 @@ function Dashboard() {
     const navigate=useNavigate()
   
     useEffect(() => {
-      axios.get('http://localhost:4000/user/viewuser').then((response) => {
+      axios.get(`${process.env.REACT_APP_BACKEND_URL}/user/viewuser`).then((response) => {
         console.log(response);
         setUser(response.data.data)
       }).catch((err) => {
@@ -19,7 +19,7 @@ function Dashboard() {
         // id=doctorid
     ])
     useEffect(() => {
-        axios.get('http://localhost:4000/appoint/appoint').then((response) => {
+        axios.get(`${process.env.REACT_APP_BACKEND_URL}/appoint/appoint`).then((response) => {
             const currentDate = new Date().toISOString().split('T')[0];
             const filteredAppointments = response.data.data.filter(appointment => {
               const appointmentDate = new Date(appointment.date).toISOString().split('T')[0];
@@ -34,7 +34,7 @@ function Dashboard() {
         // id=doctorid
       ])
       useEffect(() => {
-        axios.get('http://localhost:4000/appoint/appoint').then((response) => {
+        axios.get(`${process.env.REACT_APP_BACKEND_URL}/appoint/appoint`).then((response) => {
           console.log(response);
           setAppoint(response.data.data)
         }).catch((err) => {
@@ -45,7 +45,7 @@ function Dashboard() {
 
       useEffect(() => {
         // Fetch doctors
-        axios.get('http://localhost:4000/docteravaliable/listdocter')
+        axios.get(`${process.env.REACT_APP_BACKEND_URL}/docteravaliable/listdocter`)
           .then((response) => {
             console.log('Doctors:', response);
             setDoctors(response.data.data);

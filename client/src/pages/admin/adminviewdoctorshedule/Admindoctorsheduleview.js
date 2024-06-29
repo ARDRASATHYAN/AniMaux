@@ -8,7 +8,7 @@ function Admindoctorsheduleview() {
     const navigate=useNavigate()
     const [slots, setSlots] = useState([]);
     useEffect(() => {
-      axios.get('http://localhost:4000/service/view-slot')
+      axios.get(`${process.env.REACT_APP_BACKEND_URL}/service/view-slot`)
         .then((response) => {
           console.log('Slots:', response.data.data);
           setSlots(response.data.data);
@@ -19,7 +19,7 @@ function Admindoctorsheduleview() {
     }, []);
 
     const handleDelete = (id) => {
-        axios.delete(`http://localhost:4000/docteravaliable/delete-slot/${id}`)
+        axios.delete(`${process.env.REACT_APP_BACKEND_URL}/docteravaliable/delete-slot/${id}`)
           .then(() => {
             setSlots(slots.filter((slot) => slot._id !== id));
           })

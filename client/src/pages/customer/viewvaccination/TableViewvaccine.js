@@ -10,7 +10,7 @@ function TableViewvaccine() {
     const { id } = useParams()
     const navigate = useNavigate()
     useEffect(() => {
-        axios.get(`http://localhost:4000/vaccine/viewvaccine/${id}`)
+        axios.get(`${process.env.REACT_APP_BACKEND_URL}/vaccine/viewvaccine/${id}`)
             .then((Response) => {
                 console.log('API response:', Response.data); // Log the response
                 setfirst(Response.data.data);

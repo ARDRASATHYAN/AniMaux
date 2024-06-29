@@ -8,7 +8,7 @@ function Viewservices() {
     const [user, setUser] = useState([])
     const navigate=useNavigate()
     useEffect(() => {
-        axios.get('http://localhost:4000/service/viewservices').then((response) => {
+        axios.get(`${process.env.REACT_APP_BACKEND_URL}/service/viewservices`).then((response) => {
             console.log(response);
             setUser(response.data.data)
         }).catch((err) => {

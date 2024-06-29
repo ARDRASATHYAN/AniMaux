@@ -88,11 +88,11 @@ function AddPet() {
         const data = new FormData()
         data.append('name', file.name)
         data.append('file', file)
-        axios.post('http://localhost:4000/image/upload-image', data).then((response) => {
+        axios.post(`${process.env.REACT_APP_BACKEND_URL}/image/upload-image`, data).then((response) => {
           console.log(response);
         })
       }
-      axios.post('http://localhost:4000/pet/pet', input).then((response) => {
+      axios.post(`${process.env.REACT_APP_BACKEND_URL}/pet/pet`, input).then((response) => {
         console.log("res===========>", response.data);
         if (response.data.success === true) {
           navigate('/viewpet')

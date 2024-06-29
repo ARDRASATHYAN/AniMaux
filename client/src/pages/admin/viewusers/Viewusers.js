@@ -14,7 +14,7 @@ function Viewusers() {
   };
 
   useEffect(() => {
-    axios.get('http://localhost:4000/user/viewuser').then((response) => {
+    axios.get(`${process.env.REACT_APP_BACKEND_URL}/user/viewuser`).then((response) => {
       console.log(response);
       setUser(response.data.data)
     }).catch((err) => {
