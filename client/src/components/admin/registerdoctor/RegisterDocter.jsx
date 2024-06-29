@@ -44,7 +44,9 @@ function RegisterDocter() {
         })
         .then((response) => {
           console.log("res==============>", response.data)
-          navigate('/login')
+          if (response.data.success === true) {
+            window.location.reload()
+           }
         })
         .catch((err) => {
           console.log(err)

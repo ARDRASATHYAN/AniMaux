@@ -96,16 +96,7 @@ function UserRegisteration() {
 
             console.log("res===========>", response.data);
             if (response.data.success === true) {
-              // toast.success('appointment successful', {
-              //     position: "top-center",
-              //     autoClose: 5000,
-              //     hideProgressBar: false,
-              //     closeOnClick: true,
-              //     pauseOnHover: true,
-              //     draggable: true,
-              //     progress: undefined,
-              //     theme: "colored",
-              // });
+             navigate('/login')
             }
           }).catch((err) => {
             console.log(err);
