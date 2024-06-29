@@ -47,12 +47,12 @@ function DoctorReg() {
         const data = new FormData()
         data.append('name', file.name)
         data.append('file', file)
-  
+        return axios.post(`${process.env.REACT_APP_BACKEND_URL}/image/upload-image`, data)
+       
+        .then((response) => {
         axios.post(`${process.env.REACT_APP_BACKEND_URL}/register/doctreg`, input)
           .then((response) => {
-            return axios.post(`${process.env.REACT_APP_BACKEND_URL}/image/upload-image`, data)
-          })
-          .then((response) => {
+           
             console.log("res==============>", response.data)
             if (response.data.success === true) {
               window.location.reload();
@@ -62,6 +62,7 @@ function DoctorReg() {
           .catch((err) => {
             console.log(err)
           })
+        })
       }
     }
   

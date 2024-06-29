@@ -37,20 +37,21 @@ function RegisterDocter() {
       const data = new FormData()
       data.append('name', file.name)
       data.append('file', file)
-
-      axios.post(`${process.env.REACT_APP_BACKEND_URL}/register/doctreg`, input)
-        .then((response) => {
-          return axios.post(`${process.env.REACT_APP_BACKEND_URL}/image/upload-image`, data)
-        })
-        .then((response) => {
-          console.log("res==============>", response.data)
-          if (response.data.success === true) {
-            window.location.reload()
-           }
-        })
-        .catch((err) => {
-          console.log(err)
-        })
+      axios.post(`${process.env.REACT_APP_BACKEND_URL}/image/upload-image`, data)
+      .then((response) => {
+        return axios.post(`${process.env.REACT_APP_BACKEND_URL}/register/doctreg`, input);
+      })
+      .then((response) => {
+        if (response.data.data=== true) {
+          console.log('Registration successful');
+          window.location.reload();
+        } else {
+          console.log('Registration failed:', response.data.message); // Log the error message if registration fails
+        }
+      })
+      .catch((err) => {
+        console.error('Error during registration:', err);
+      });
     }
   }
 
@@ -109,46 +110,7 @@ function RegisterDocter() {
 
     return errors
   }
-//   const validation=( event)=>{
-//     event.preventDefault();
-//     setformErrors(validate(input))
-//     setIsSubmit(true)
-//     console.log(formErrors);
-//     if(Object.keys(formErrors).length==0&&isSubmit){
 
-//       if (file) {
-//         const data = new FormData()
-//         data.append('name', file.name)
-//         data.append('file', file)
-        
-//           axios.post('http://localhost:4000/register/doctreg',input).then((response)=>{
-//             axios.post('http://localhost:4000/slot/upload-image', data).then((response) => {
-//             console.log("res==============>",response.data);
-//             // if(response.data.success===true){
-//               navigate('/login')
-//             // }
-//           }).catch((err)=>{
-//             console.log(err);
-//           })
-        
-//         })
-//       }
-
-
-    
-//     }
-    
-   
-   
-// }
-// if (file) {
-    //   const data = new FormData()
-    //   data.append('name', file.name)
-    //   data.append('file', file)
-    //   axios.post('http://localhost:4000/slot/upload-image', data).then((response) => {
-    //     console.log(response);
-    //   })
-    // }
   return (
     <>
     {/* Section: Design Block */}

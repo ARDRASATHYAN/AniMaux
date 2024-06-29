@@ -91,9 +91,10 @@ function UserRegisteration() {
         const data = new FormData()
         data.append('name', file.name)
         data.append('file', file)
+        axios.post(`${process.env.REACT_APP_BACKEND_URL}/image/upload-image`, data).then((response) => {
         axios.post(`${process.env.REACT_APP_BACKEND_URL}/register/userreg`, input).then((response) => {
-          axios.post(`${process.env.REACT_APP_BACKEND_URL}/image/upload-image`, data).then((response) => {
-            if (response.data.success === true) {
+         
+            if (response.data.success == true) {
               navigate('/login');
             }
           }).catch((err) => {
